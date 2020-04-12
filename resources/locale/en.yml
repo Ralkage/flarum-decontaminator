@@ -1,0 +1,31 @@
+imorland-post-decontaminator:
+  admin:
+
+    delete_profanity_confirmation: Are you sure?
+    edit_profanity:
+      applywhen_label: Apply When
+      delete_confirmation: Are you sure you want to delete this?
+      flag_label: Flag
+      name_label: Name
+      regex_label: Regex
+      replacement_label: Replacement
+      delete_button: Delete
+      submit_button: Save Changes
+      title: Create/Edit Profanity Rule
+
+    email:
+      profanity_alert_email:
+        subject: Alert from the profanity filter
+        body: |
+
+          The rule named {name} found a match word "{matchedWord}" in a post authored by {username}
+
+          See it here: {url}
+
+    profanities:
+      about_text: Create and manage banned profanities.
+      create_button: Create
+
+    profanities_list:
+      empty_text: It looks like there are no rules here.
+      title: List of regex to ban profanities

@@ -1,0 +1,33 @@
+{
+  "name": "imorland/flarum-decontaminator",
+  "description": "Apply profanity checks to posts",
+  "keywords": [
+    "flarum"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": "^0.1.0-beta.12"
+  },
+  "authors": [
+    {
+      "name": "Ian Morland",
+      "email": "ian@morland.me"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "imorland\\PostDecontaminator\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Post Decontaminator",
+      "icon": {
+        "name": "far fa-eye-slash",
+        "backgroundColor": "#e74c3c",
+        "color": "#fff"
+      }
+    }
+  }
+}
