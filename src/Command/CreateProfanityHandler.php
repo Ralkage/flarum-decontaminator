@@ -3,8 +3,8 @@
 namespace imorland\PostDecontaminator\Command;
 
 use Flarum\User\AssertPermissionTrait;
-use giffgaff\PostDecontaminator\PostDecontaminatorModel;
-use giffgaff\PostDecontaminator\PostDecontaminatorValidator;
+use imorland\PostDecontaminator\PostDecontaminatorModel;
+use imorland\PostDecontaminator\PostDecontaminatorValidator;
 
 class CreateProfanityHandler
 {

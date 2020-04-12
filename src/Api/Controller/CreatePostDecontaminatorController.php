@@ -4,6 +4,7 @@ namespace imorland\PostDecontaminator\Api\Controller;
 
 use Flarum\Api\Controller\AbstractCreateController;
 use imorland\PostDecontaminator\Command\CreateProfanity;
+use imorland\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
@@ -13,7 +14,7 @@ class CreatePostDecontaminatorController extends AbstractCreateController
     /**
      * {@inheritdoc}
      */
-    public $serializer = 'imorland\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer';
+    public $serializer = PostDecontaminatorSerializer::class;
 
     /**
      * @var Dispatcher
