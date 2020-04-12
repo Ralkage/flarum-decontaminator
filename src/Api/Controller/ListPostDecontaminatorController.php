@@ -6,6 +6,7 @@ use Flarum\Api\Controller\AbstractListController;
 use Flarum\Http\UrlGenerator;
 use Flarum\Search\SearchCriteria;
 use imorland\PostDecontaminator\Search\Page\PageSearcher;
+use imorland\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
 
@@ -14,7 +15,7 @@ class ListPostDecontaminatorController extends AbstractListController
     /**
      * {@inheritdoc}
      */
-    public $serializer = 'imorland\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer';
+    public $serializer = PostDecontaminatorSerializer::class;
 
     /**
      * {@inheritdoc}
