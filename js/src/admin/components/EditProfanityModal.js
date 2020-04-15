@@ -43,6 +43,7 @@ export default class EditPageModal extends Modal {
                 }}
               />
             </label>
+            {app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.name_help')}
           </div>
           <div className="Form-group">
             <label>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.regex_label')}
@@ -55,6 +56,7 @@ export default class EditPageModal extends Modal {
                 }}
               />
             </label>
+            {app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.regex_help')}
           </div>
 
           <div className="Form-group">
@@ -68,6 +70,7 @@ export default class EditPageModal extends Modal {
                 }}
               />
             </label>
+            {app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.replacement_help')}
           </div>
 
           <div className="Form-group">
@@ -79,6 +82,7 @@ export default class EditPageModal extends Modal {
                 this.flag(e.target.checked);
               }}
             />
+            <p>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.flag_help')}</p>
           </div>
 
           <div className="Form-group">
@@ -93,6 +97,7 @@ export default class EditPageModal extends Modal {
               </option>
               </select>
             </label>
+            {app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.applywhen_help')}
           </div>
 
           <div className="Form-group">
