@@ -12,6 +12,9 @@ imorland-post-decontaminator:
       delete_button: Delete
       submit_button: Save Changes
       title: Create/Edit Profanity Rule
+      action:
+        save: Saving a Post
+        load: Loading a Post (this can have an adverse performance impact)
 
     email:
       profanity_alert_email:
