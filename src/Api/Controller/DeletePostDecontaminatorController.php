@@ -1,9 +1,9 @@
 <?php
 
-namespace imorland\PostDecontaminator\Api\Controller;
+namespace Flarumite\PostDecontaminator\Api\Controller;
 
 use Flarum\Api\Controller\AbstractDeleteController;
-use imorland\PostDecontaminator\Command\DeleteProfanity;
+use Flarumite\PostDecontaminator\Command\DeleteProfanity;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
 

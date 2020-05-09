@@ -1,9 +1,9 @@
 <?php
 
-namespace imorland\PostDecontaminator\Api\Controller;
+namespace Flarumite\PostDecontaminator\Api\Controller;
 
 use Flarum\Api\Controller\AbstractShowController;
-use imorland\PostDecontaminator\Command\EditProfanity;
+use Flarumite\PostDecontaminator\Command\EditProfanity;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;

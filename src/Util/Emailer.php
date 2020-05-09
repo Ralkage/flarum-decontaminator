@@ -1,6 +1,6 @@
 <?php
 
-namespace imorland\PostDecontaminator\Util;
+namespace Flarumite\PostDecontaminator\Util;
 
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Mail\Message;

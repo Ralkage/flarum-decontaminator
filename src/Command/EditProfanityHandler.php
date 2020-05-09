@@ -1,10 +1,10 @@
 <?php
 
-namespace imorland\PostDecontaminator\Command;
+namespace Flarumite\PostDecontaminator\Command;
 
 use Flarum\User\AssertPermissionTrait;
-use imorland\PostDecontaminator\PostDecontaminatorRepository;
-use imorland\PostDecontaminator\PostDecontaminatorValidator;
+use Flarumite\PostDecontaminator\PostDecontaminatorRepository;
+use Flarumite\PostDecontaminator\PostDecontaminatorValidator;
 use Illuminate\Support\Arr;
 
 class EditProfanityHandler

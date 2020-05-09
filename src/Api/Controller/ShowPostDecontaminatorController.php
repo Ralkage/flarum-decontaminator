@@ -1,9 +1,9 @@
 <?php
 
-namespace imorland\PostDecontaminator\Api\Controller;
+namespace Flarumite\PostDecontaminator\Api\Controller;
 
 use Flarum\Api\Controller\AbstractShowController;
-use imorland\PostDecontaminator\PostDecontaminatorRepository;
+use Flarumite\PostDecontaminator\PostDecontaminatorRepository;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
 

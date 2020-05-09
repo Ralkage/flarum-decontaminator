@@ -24,7 +24,7 @@ export default class EditPageModal extends Modal {
   }
 
   title() {
-    return app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.title');
+    return app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.title');
   }
 
   content() {
@@ -33,7 +33,7 @@ export default class EditPageModal extends Modal {
         <div className="Form">
 
           <div className="Form-group">
-            <label>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.name_label')}
+            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.name_label')}
               <input
                 className="FormControl"
                 placeholder=''
@@ -43,10 +43,10 @@ export default class EditPageModal extends Modal {
                 }}
               />
             </label>
-            {app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.name_help')}
+            {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.name_help')}
           </div>
           <div className="Form-group">
-            <label>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.regex_label')}
+            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.regex_label')}
               <input
                 className="FormControl"
                 placeholder=''
@@ -56,11 +56,11 @@ export default class EditPageModal extends Modal {
                 }}
               />
             </label>
-            {app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.regex_help')}
+            {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.regex_help')}
           </div>
 
           <div className="Form-group">
-            <label>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.replacement_label')}
+            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.replacement_label')}
               <input
                 className="FormControl"
                 placeholder=''
@@ -70,11 +70,11 @@ export default class EditPageModal extends Modal {
                 }}
               />
             </label>
-            {app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.replacement_help')}
+            {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.replacement_help')}
           </div>
 
           <div className="Form-group">
-            <label>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.flag_label')}</label>
+            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.flag_label')}</label>
             <input
               type="checkbox"
               checked={this.flag()}
@@ -82,22 +82,22 @@ export default class EditPageModal extends Modal {
                 this.flag(e.target.checked);
               }}
             />
-            <p>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.flag_help')}</p>
+            <p>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.flag_help')}</p>
           </div>
 
           <div className="Form-group">
-            <label>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.applywhen_label')}
+            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.applywhen_label')}
               <select className="FormControl"
 
                 oninput={m.withAttr('value', this.event)}
                 value={this.event()}
               >
-                <option value="save">{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.action.save')}</option>
-                <option value="load">{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.action.load')}
+                <option value="save">{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.action.save')}</option>
+                <option value="load">{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.action.load')}
               </option>
               </select>
             </label>
-            {app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.applywhen_help')}
+            {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.applywhen_help')}
           </div>
 
           <div className="Form-group">
@@ -105,12 +105,12 @@ export default class EditPageModal extends Modal {
               type: 'submit',
               className: 'Button Button--primary EditProfanityModal-save',
               loading: this.loading,
-              children: app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.submit_button'),
+              children: app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.submit_button'),
             })}
             {this.profanity.exists ? (
               <button type="button" className="Button EditProfanityModal-delete"
                 onclick={this.delete.bind(this)}>
-                {app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.delete_button')}
+                {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.delete_button')}
               </button>
             ) : (
                 ''

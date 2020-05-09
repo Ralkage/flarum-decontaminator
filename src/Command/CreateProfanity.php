@@ -1,6 +1,6 @@
 <?php
 
-namespace imorland\PostDecontaminator\Command;
+namespace Flarumite\PostDecontaminator\Command;
 
 use Flarum\User\User;
 

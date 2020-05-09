@@ -51,7 +51,7 @@ export default class ProfanitiesListItem extends Component {
 
 
     delete() {
-        if (confirm(app.translator.trans('imorland-post-decontaminator.admin.delete_profanity_confirmation'))) {
+        if (confirm(app.translator.trans('flarumite-post-decontaminator.admin.delete_profanity_confirmation'))) {
             this.props.profanity.delete().then(() => m.redraw());
             m.route(app.route('profanities'));
         }

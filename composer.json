@@ -1,6 +1,6 @@
 {
-  "name": "imorland/flarum-decontaminator",
-  "description": "Apply profanity checks to posts",
+  "name": "flarumite/flarum-decontaminator",
+  "description": "Apply profanity checks to posts using regex",
   "keywords": [
     "flarum"
   ],
@@ -22,7 +22,7 @@
   },
   "extra": {
     "flarum-extension": {
-      "title": "Post Decontaminator",
+      "title": "Flarumite Post Decontaminator",
       "icon": {
         "name": "far fa-eye-slash",
         "backgroundColor": "#e74c3c",

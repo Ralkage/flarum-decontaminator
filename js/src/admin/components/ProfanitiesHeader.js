@@ -7,12 +7,12 @@ export default class ProfanitiesHeader extends Component {
     return (
 
         <div className="container">
-          <p>{app.translator.trans('imorland-post-decontaminator.admin.profanities.about_text')}</p>
+          <p>{app.translator.trans('flarumite-post-decontaminator.admin.profanities.about_text')}</p>
 
           {Button.component({
                               className: 'Button Button--primary',
                               icon: 'fas fa-plus',
-                              children: app.translator.trans('imorland-post-decontaminator.admin.profanities.create_button'),
+                              children: app.translator.trans('flarumite-post-decontaminator.admin.profanities.create_button'),
                               onclick: () => app.modal.show(new EditProfanityModal()),
                             })}
         </div>

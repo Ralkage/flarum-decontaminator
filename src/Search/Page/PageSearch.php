@@ -1,6 +1,6 @@
 <?php
 
-namespace imorland\PostDecontaminator\Search\Page;
+namespace Flarumite\PostDecontaminator\Search\Page;
 
 use Flarum\Search\AbstractSearch;
 

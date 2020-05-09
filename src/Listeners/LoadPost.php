@@ -1,11 +1,11 @@
 <?php
 
-namespace imorland\PostDecontaminator\Listeners;
+namespace Flarumite\PostDecontaminator\Listeners;
 
 use Flarum\Api\Event\Serializing;
 use Flarum\Api\Serializer\PostSerializer;
-use imorland\PostDecontaminator\PostDecontaminatorModel;
-use imorland\PostDecontaminator\Util\DecontaminationProcessor;
+use Flarumite\PostDecontaminator\PostDecontaminatorModel;
+use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 use Illuminate\Contracts\Events\Dispatcher;
 
 class LoadPost

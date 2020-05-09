@@ -1,8 +1,8 @@
 <?php
 
-namespace imorland\PostDecontaminator\Util;
+namespace Flarumite\PostDecontaminator\Util;
 
-use imorland\PostDecontaminator\PostDecontaminatorModel;
+use Flarumite\PostDecontaminator\PostDecontaminatorModel;
 
 class Html
 {

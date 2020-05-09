@@ -1,6 +1,6 @@
 <?php
 
-namespace imorland\PostDecontaminator\Api\Serializer;
+namespace Flarumite\PostDecontaminator\Api\Serializer;
 
 use Flarum\Api\Serializer\AbstractSerializer;
 

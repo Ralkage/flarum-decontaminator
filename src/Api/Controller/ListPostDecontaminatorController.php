@@ -1,12 +1,12 @@
 <?php
 
-namespace imorland\PostDecontaminator\Api\Controller;
+namespace Flarumite\PostDecontaminator\Api\Controller;
 
 use Flarum\Api\Controller\AbstractListController;
 use Flarum\Http\UrlGenerator;
 use Flarum\Search\SearchCriteria;
-use imorland\PostDecontaminator\Search\Page\PageSearcher;
-use imorland\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer;
+use Flarumite\PostDecontaminator\Search\Page\PageSearcher;
+use Flarumite\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
 

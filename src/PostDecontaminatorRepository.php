@@ -1,6 +1,6 @@
 <?php
 
-namespace imorland\PostDecontaminator;
+namespace Flarumite\PostDecontaminator;
 
 use Flarum\User\User;
 use Illuminate\Database\Eloquent\Builder;

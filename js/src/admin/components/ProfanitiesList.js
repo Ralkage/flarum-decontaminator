@@ -20,7 +20,7 @@ export default class ProfanitiesList extends Component {
         }
 
         if (this.profanities.length === 0) {
-            const text = app.translator.trans('imorland-post-decontaminator.admin.profanities_list.empty_text');
+            const text = app.translator.trans('flarumite-post-decontaminator.admin.profanities_list.empty_text');
             return Placeholder.component({ text });
         }
 
@@ -30,10 +30,10 @@ export default class ProfanitiesList extends Component {
                 <table className="ProfanitiesList-results">
                     <thead>
                         <tr>
-                            <th>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.name_label')}</th>
-                            <th>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.regex_label')}</th>
-                            <th>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.replacement_label')}</th>
-                            <th>{app.translator.trans('imorland-post-decontaminator.admin.edit_profanity.flag_label')}</th>
+                            <th>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.name_label')}</th>
+                            <th>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.regex_label')}</th>
+                            <th>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.replacement_label')}</th>
+                            <th>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.flag_label')}</th>
                             {/*leave blank for the action buttons*/}
                             <th></th>
                         </tr>

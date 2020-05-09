@@ -1,10 +1,10 @@
 <?php
 
-namespace imorland\PostDecontaminator\Util;
+namespace Flarumite\PostDecontaminator\Util;
 
 use Flarum\Post\Post;
 use Flarum\Discussion\Discussion;
-use imorland\PostDecontaminator\PostDecontaminatorModel;
+use Flarumite\PostDecontaminator\PostDecontaminatorModel;
 use Symfony\Component\Translation\TranslatorInterface;
 use Flarum\Flags\Command\CreateFlag;
 use Illuminate\Contracts\Bus\Dispatcher;

@@ -1,12 +1,12 @@
 <?php
 
-namespace imorland\PostDecontaminator\Search\Page;
+namespace Flarumite\PostDecontaminator\Search\Page;
 
 use Flarum\Search\ApplySearchParametersTrait;
 use Flarum\Search\GambitManager;
 use Flarum\Search\SearchCriteria;
 use Flarum\Search\SearchResults;
-use imorland\PostDecontaminator\PostDecontaminatorRepository;
+use Flarumite\PostDecontaminator\PostDecontaminatorRepository;
 
 class PageSearcher
 {

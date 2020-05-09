@@ -1,12 +1,12 @@
 <?php
 
-namespace imorland\PostDecontaminator\Listeners;
+namespace Flarumite\PostDecontaminator\Listeners;
 
 use Flarum\Discussion\Event\Renamed;
 use Flarum\Discussion\Event\Started;
-use imorland\PostDecontaminator\PostDecontaminatorModel;
-use imorland\PostDecontaminator\PostDecontaminatorRepository;
-use imorland\PostDecontaminator\Util\DecontaminationProcessor;
+use Flarumite\PostDecontaminator\PostDecontaminatorModel;
+use Flarumite\PostDecontaminator\PostDecontaminatorRepository;
+use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 use Illuminate\Contracts\Events\Dispatcher;
 
 class SaveDiscussion

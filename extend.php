@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of imorland/flarum-decontaminator.
+ * This file is part of flarumite/flarum-decontaminator.
  *
  * Copyright (c) 2019 Ian Morland.
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace imorland\PostDecontaminator;
+namespace Flarumite\PostDecontaminator;
 
 use Flarum\Extend;
-use imorland\PostDecontaminator\Api\Controller;
-use imorland\PostDecontaminator\Listeners\LoadPost;
-use imorland\PostDecontaminator\Listeners\SavePost;
-use imorland\PostDecontaminator\Listeners\SaveDiscussion;
+use Flarumite\PostDecontaminator\Api\Controller;
+use Flarumite\PostDecontaminator\Listeners\LoadPost;
+use Flarumite\PostDecontaminator\Listeners\SavePost;
+use Flarumite\PostDecontaminator\Listeners\SaveDiscussion;
 use Illuminate\Contracts\Events\Dispatcher;
 
 return [
