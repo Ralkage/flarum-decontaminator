@@ -13,18 +13,15 @@ namespace Flarumite\PostDecontaminator\Listeners;
 
 use Flarum\Post\Event\Saving;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
-use Flarumite\PostDecontaminator\PostDecontaminatorRepository;
 use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 
 class SavePost
 {
     private $decontaminationProcessor;
-    private $repository;
 
-    public function __construct(DecontaminationProcessor $decontaminationProcessor, PostDecontaminatorRepository $repository)
+    public function __construct(DecontaminationProcessor $decontaminationProcessor)
     {
         $this->decontaminationProcessor = $decontaminationProcessor;
-        $this->repository = $repository;
     }
 
     /**
@@ -32,7 +29,7 @@ class SavePost
      */
     public function handle(Saving $event): void
     {
-        if ($event->actor->can('bypassDeccontaminator')) {
+        if ($event->actor->can('bypassDecontaminator')) {
             return;
         }
 

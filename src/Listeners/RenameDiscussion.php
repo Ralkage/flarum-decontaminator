@@ -13,18 +13,15 @@ namespace Flarumite\PostDecontaminator\Listeners;
 
 use Flarum\Discussion\Event\Renamed;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
-use Flarumite\PostDecontaminator\PostDecontaminatorRepository;
 use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 
 class RenameDiscussion
 {
     private $decontaminationProcessor;
-    private $repository;
 
-    public function __construct(DecontaminationProcessor $decontaminationProcessor, PostDecontaminatorRepository $repository)
+    public function __construct(DecontaminationProcessor $decontaminationProcessor)
     {
         $this->decontaminationProcessor = $decontaminationProcessor;
-        $this->repository = $repository;
     }
 
     public function handle(Renamed $event): void
