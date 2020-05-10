@@ -37,6 +37,6 @@ return [
     (new Extend\Event())
         ->listen(Saving::class, Listeners\SavePost::class)
         ->listen(Serializing::class, Listeners\LoadPost::class)
-        ->listen(Started::class, SaveDiscussion::class)
-        ->listen(Renamed::class, RenameDiscussion::class),
+        ->listen(Started::class, Listeners\SaveDiscussion::class)
+        ->listen(Renamed::class, Listeners\RenameDiscussion::class),
 ];
