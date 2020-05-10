@@ -31,6 +31,9 @@ class LoadPost
     public function handle(Serializing $event): void
     {
         if ($event->isSerializer(PostSerializer::class)) {
+            if ($event->actor->can('bypassDeccontaminator')) {
+                return;
+            }
             PostDecontaminatorModel::query()
                 ->where('event', 'load')
                 ->each(function (PostDecontaminatorModel $model) use ($event) {

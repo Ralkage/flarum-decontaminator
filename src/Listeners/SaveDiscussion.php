@@ -32,9 +32,9 @@ class SaveDiscussion
      */
     public function handle(Started $event): void
     {
-        // if ($this->repository->isStaff($event->actor->id) || $this->repository->isStaff($event->discussion->user_id)) {
-        //     return;
-        // }
+        if ($event->actor->can('bypassDeccontaminator')) {
+            return;
+        }
 
         PostDecontaminatorModel::query()
             ->where('event', 'save')

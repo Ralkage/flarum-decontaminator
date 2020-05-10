@@ -32,9 +32,9 @@ class SavePost
      */
     public function handle(Saving $event): void
     {
-        // if ($this->repository->isStaff($event->actor->id) || $this->repository->isStaff($event->post->user_id)) {
-        //     return;
-        // }
+        if ($event->actor->can('bypassDeccontaminator')) {
+            return;
+        }
 
         if (!isset($event->data['attributes']['reaction'])) { // Add support for reactions, don't process the Saving event as we've already handled it
             PostDecontaminatorModel::query()
