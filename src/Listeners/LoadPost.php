@@ -31,7 +31,7 @@ class LoadPost
     public function handle(Serializing $event): void
     {
         if ($event->isSerializer(PostSerializer::class)) {
-            if ($event->actor->can('bypassDeccontaminator')) {
+            if ($event->actor->hasPermission('user.bypassDecontaminator')) {
                 return;
             }
             PostDecontaminatorModel::query()

@@ -29,7 +29,7 @@ class SaveDiscussion
      */
     public function handle(Started $event): void
     {
-        if ($event->actor->can('bypassDeccontaminator')) {
+        if ($event->actor->hasPermission('user.bypassDecontaminator')) {
             return;
         }
 

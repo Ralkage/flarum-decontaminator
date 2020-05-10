@@ -26,7 +26,7 @@ class RenameDiscussion
 
     public function handle(Renamed $event): void
     {
-        if ($event->actor->can('bypassDeccontaminator')) {
+        if ($event->actor->hasPermission('user.bypassDecontaminator')) {
             return;
         }
 

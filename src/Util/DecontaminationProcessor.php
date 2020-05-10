@@ -66,9 +66,6 @@ class DecontaminationProcessor
             $trimmedTitle = trim($discussion->title);
             $discussion->title = $this->processRegEx($model, $trimmedTitle);
 
-            // More work needed here. Need to get the first post saved in the discussion, and pass the ID to raiseFlag()
-            // For now, we cleanse the title, but no flag is raised.
-
             if ($this->flagsEnabled && $model->flag) {
                 if ($renamed) {
                     $post = Post::where('discussion_id', $discussion->id)->where('number', 1)->first();
@@ -98,10 +95,10 @@ class DecontaminationProcessor
 
     public function raiseFlag(Post $post, PostDecontaminatorModel $model, $matches = ''): void
     {
-        if ($post->discussion->is_private) {
-            $reportingUser = User::where('id', $post->user_id)->first();
-        } else {
-            $reportingUser = User::where('id', '1')->first();
+        $actor = User::find($post->user_id);
+
+        if ($actor->cannot('flag', $post)) {
+            $actor = User::find(1);
         }
 
         if ($matches !== '') {
@@ -118,7 +115,7 @@ class DecontaminationProcessor
                 'user' => [
                     'data' => [
                         'type' => 'users',
-                        'id'   => $reportingUser->id,
+                        'id'   => $actor->id,
                     ],
                 ],
                 'post' => [
@@ -130,11 +127,6 @@ class DecontaminationProcessor
             ],
         ];
 
-        $this->bus->dispatch(new CreateFlag($reportingUser, $data));
-    }
-
-    private function getUser()
-    {
-        return User::findById(1);
+        $this->bus->dispatch(new CreateFlag($actor, $data));
     }
 }

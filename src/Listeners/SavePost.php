@@ -29,7 +29,7 @@ class SavePost
      */
     public function handle(Saving $event): void
     {
-        if ($event->actor->can('bypassDecontaminator')) {
+        if ($event->actor->hasPermission('user.bypassDecontaminator')) {
             return;
         }
 
