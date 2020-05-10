@@ -1,22 +1,17 @@
 import Modal from 'flarum/components/Modal';
 import Button from 'flarum/components/Button';
-import Switch from 'flarum/components/Switch';
 
-/**
- * The `EditPageModal` component shows a modal dialog which allows the user
- * to create or edit a profanitiesObject.
- */
-export default class EditPageModal extends Modal {
+export default class EditDecontaminatorRuleModal extends Modal {
   init() {
     super.init();
 
-    this.profanity = this.props.profanity || app.store.createRecord('profanities');
+    this.rule = this.props.rule || app.store.createRecord('decontaminator');
 
-    this.regex = m.prop(this.profanity.regex() || '');
-    this.name = m.prop(this.profanity.name() || '');
-    this.replacement = m.prop(this.profanity.replacement() || '');
-    this.flag = m.prop(this.profanity.flag() || '');
-    this.event = m.prop(this.profanity.event() || '');
+    this.regex = m.prop(this.rule.regex() || '');
+    this.name = m.prop(this.rule.name() || '');
+    this.replacement = m.prop(this.rule.replacement() || '');
+    this.flag = m.prop(this.rule.flag() || '');
+    this.event = m.prop(this.rule.event() || 'save');
   }
 
   className() {
@@ -24,7 +19,7 @@ export default class EditPageModal extends Modal {
   }
 
   title() {
-    return app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.title');
+    return app.translator.trans('flarumite-decontaminator.admin.edit_rule.title');
   }
 
   content() {
@@ -33,7 +28,7 @@ export default class EditPageModal extends Modal {
         <div className="Form">
 
           <div className="Form-group">
-            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.name_label')}
+            <label>{app.translator.trans('flarumite-decontaminator.admin.edit_rule.name_label')}
               <input
                 className="FormControl"
                 placeholder=''
@@ -43,10 +38,10 @@ export default class EditPageModal extends Modal {
                 }}
               />
             </label>
-            {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.name_help')}
+            {app.translator.trans('flarumite-decontaminator.admin.edit_rule.name_help')}
           </div>
           <div className="Form-group">
-            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.regex_label')}
+            <label>{app.translator.trans('flarumite-decontaminator.admin.edit_rule.regex_label')}
               <input
                 className="FormControl"
                 placeholder=''
@@ -56,11 +51,13 @@ export default class EditPageModal extends Modal {
                 }}
               />
             </label>
-            {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.regex_help')}
+            {app.translator.trans('flarumite-decontaminator.admin.edit_rule.regex_help')}
+            <br/>
+            <a href="https://regex101.com" target="_blank">regex101.com</a>
           </div>
 
           <div className="Form-group">
-            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.replacement_label')}
+            <label>{app.translator.trans('flarumite-decontaminator.admin.edit_rule.replacement_label')}
               <input
                 className="FormControl"
                 placeholder=''
@@ -70,11 +67,11 @@ export default class EditPageModal extends Modal {
                 }}
               />
             </label>
-            {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.replacement_help')}
+            {app.translator.trans('flarumite-decontaminator.admin.edit_rule.replacement_help')}
           </div>
 
           <div className="Form-group">
-            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.flag_label')}</label>
+            <label>{app.translator.trans('flarumite-decontaminator.admin.edit_rule.flag_label')}</label>
             <input
               type="checkbox"
               checked={this.flag()}
@@ -82,22 +79,22 @@ export default class EditPageModal extends Modal {
                 this.flag(e.target.checked);
               }}
             />
-            <p>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.flag_help')}</p>
+            <p>{app.translator.trans('flarumite-decontaminator.admin.edit_rule.flag_help')}</p>
           </div>
 
           <div className="Form-group">
-            <label>{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.applywhen_label')}
+            <label>{app.translator.trans('flarumite-decontaminator.admin.edit_rule.applywhen_label')}
               <select className="FormControl"
 
                 oninput={m.withAttr('value', this.event)}
                 value={this.event()}
               >
-                <option value="save">{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.action.save')}</option>
-                <option value="load">{app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.action.load')}
+                <option value="save">{app.translator.trans('flarumite-decontaminator.admin.edit_rule.action.save')}</option>
+                <option value="load">{app.translator.trans('flarumite-decontaminator.admin.edit_rule.action.load')}
               </option>
               </select>
             </label>
-            {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.applywhen_help')}
+            {app.translator.trans('flarumite-decontaminator.admin.edit_rule.applywhen_help')}
           </div>
 
           <div className="Form-group">
@@ -105,12 +102,12 @@ export default class EditPageModal extends Modal {
               type: 'submit',
               className: 'Button Button--primary EditProfanityModal-save',
               loading: this.loading,
-              children: app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.submit_button'),
+              children: app.translator.trans('flarumite-decontaminator.admin.edit_rule.submit_button'),
             })}
-            {this.profanity.exists ? (
+            {this.rule.exists ? (
               <button type="button" className="Button EditProfanityModal-delete"
                 onclick={this.delete.bind(this)}>
-                {app.translator.trans('flarumite-post-decontaminator.admin.edit_profanity.delete_button')}
+                {app.translator.trans('flarumite-decontaminator.admin.edit_rule.delete_button')}
               </button>
             ) : (
                 ''
@@ -126,14 +123,14 @@ export default class EditPageModal extends Modal {
 
     this.loading = true;
 
-    this.profanity.save(
+    this.rule.save(
       {
         name: this.name(),
         regex: this.regex(),
         event: this.event(),
         flag: this.flag(),
         replacement: this.replacement(),
-        type: 'profanity',
+        type: 'decontaminator',
       },
       { errorHandler: this.onerror.bind(this) }
     )
@@ -145,15 +142,15 @@ export default class EditPageModal extends Modal {
   }
 
   onhide() {
-    m.route(app.route('profanities'));
+    m.route(app.route('decontaminator'));
   }
 
   delete() {
     if (
       confirm(
-        app.translator.trans('giffgaff-post-decontaminator.admin.edit_profanity.delete_confirmation')
+        app.translator.trans('giffgaff-decontaminator.admin.edit_rule.delete_confirmation')
       )) {
-      this.profanity.delete().then(() => m.redraw());
+      this.rule.delete().then(() => m.redraw());
       this.hide();
     }
   }

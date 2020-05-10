@@ -18,7 +18,7 @@ class PostDecontaminatorSerializer extends AbstractSerializer
     /**
      * {@inheritdoc}
      */
-    protected $type = 'profanities';
+    protected $type = 'decontaminator';
 
     /**
      * {@inheritdoc}

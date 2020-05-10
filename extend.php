@@ -26,11 +26,11 @@ return [
         ->js(__DIR__.'/js/dist/admin.js'),
 
     (new Extend\Routes('api'))
-        ->get('/profanities', 'profanities.index', Controller\ListPostDecontaminatorController::class)
-        ->post('/profanities', 'profanities.create', Controller\CreatePostDecontaminatorController::class)
-        ->get('/profanities/{id}', 'profanities.show', Controller\ShowPostDecontaminatorController::class)
-        ->patch('/profanities/{id}', 'profanities.update', Controller\UpdatePostDecontaminatorController::class)
-        ->delete('/profanities/{id}', 'profanities.delete', Controller\DeletePostDecontaminatorController::class),
+        ->get('/decontaminator', 'decontaminator.index', Controller\ListPostDecontaminatorController::class)
+        ->post('/decontaminator', 'decontaminator.create', Controller\CreatePostDecontaminatorController::class)
+        ->get('/decontaminator/{id}', 'decontaminator.show', Controller\ShowPostDecontaminatorController::class)
+        ->patch('/decontaminator/{id}', 'decontaminator.update', Controller\UpdatePostDecontaminatorController::class)
+        ->delete('/decontaminator/{id}', 'decontaminator.delete', Controller\DeletePostDecontaminatorController::class),
 
     (new Extend\Event())
         ->listen(Saving::class, Listeners\SavePost::class)
