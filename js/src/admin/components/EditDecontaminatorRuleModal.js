@@ -15,7 +15,7 @@ export default class EditDecontaminatorRuleModal extends Modal {
   }
 
   className() {
-    return 'EditProfanityModal Modal--medium';
+    return 'EditDecontaminatorModal Modal--medium';
   }
 
   title() {
@@ -100,12 +100,12 @@ export default class EditDecontaminatorRuleModal extends Modal {
           <div className="Form-group">
             {Button.component({
               type: 'submit',
-              className: 'Button Button--primary EditProfanityModal-save',
+              className: 'Button Button--primary EditDecontaminatorModal-save',
               loading: this.loading,
               children: app.translator.trans('flarumite-decontaminator.admin.edit_rule.submit_button'),
             })}
             {this.rule.exists ? (
-              <button type="button" className="Button EditProfanityModal-delete"
+              <button type="button" className="Button EditDecontaminatorModal-delete"
                 onclick={this.delete.bind(this)}>
                 {app.translator.trans('flarumite-decontaminator.admin.edit_rule.delete_button')}
               </button>

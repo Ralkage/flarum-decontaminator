@@ -14,7 +14,7 @@ export default class DecontaminatorList extends Component {
   view() {
     if (this.loading) {
       return (
-        <div className="ProfanitiesList-loading">
+        <div className="DecontaminatorList-loading">
           {LoadingIndicator.component()}
         </div>
       );
@@ -28,8 +28,8 @@ export default class DecontaminatorList extends Component {
     }
 
     return (
-      <div className="ProfanitiesList">
-        <table className="ProfanitiesList-results">
+      <div className="DecontaminatorList">
+        <table className="DecontaminatorList-results">
           <thead>
             <tr>
               <th>

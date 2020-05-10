@@ -18,7 +18,7 @@ class PostDecontaminatorModel extends AbstractModel
     /**
      * {@inheritdoc}
      */
-    protected $table = 'profanities';
+    protected $table = 'decontaminator';
 
     protected $casts = [
         'id'        => 'integer',

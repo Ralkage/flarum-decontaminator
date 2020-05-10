@@ -12,16 +12,15 @@
 namespace Flarumite\PostDecontaminator\Util;
 
 use Flarum\Discussion\Discussion;
+use Flarum\Extension\ExtensionManager;
 use Flarum\Flags\Command\CreateFlag;
 use Flarum\Post\Post;
 use Flarum\User\User;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
 use Illuminate\Contracts\Bus\Dispatcher;
-use Symfony\Component\Translation\TranslatorInterface;
 
 class DecontaminationProcessor
 {
-    private $translator;
     private $matchedWord = null;
 
     /**
@@ -29,10 +28,15 @@ class DecontaminationProcessor
      */
     protected $bus;
 
-    public function __construct(TranslatorInterface $translator, Dispatcher $bus)
+    protected $flagsEnabled = false;
+
+    public function __construct(ExtensionManager $extension, Dispatcher $bus)
     {
-        $this->translator = $translator;
         $this->bus = $bus;
+
+        if ($extension->isEnabled('flarum-flags') && class_exists(CreateFlag::class)) {
+            $this->flagsEnabled = true;
+        }
     }
 
     public function process(PostDecontaminatorModel $model, Post $post): void
@@ -44,7 +48,7 @@ class DecontaminationProcessor
         if (preg_match($model->regex, trim($post->content), $this->matchedWord)) {
             $trimmedContent = trim($post->content);
             $post->content = $this->processRegEx($model, $trimmedContent);
-            if ($model->flag) {
+            if ($this->flagsEnabled && $model->flag) {
                 $post->afterSave(function ($post) use ($model) {
                     $this->raiseFlag($post, $model);
                 });
@@ -65,7 +69,7 @@ class DecontaminationProcessor
             // More work needed here. Need to get the first post saved in the discussion, and pass the ID to raiseFlag()
             // For now, we cleanse the title, but no flag is raised.
 
-            if ($model->flag) {
+            if ($this->flagsEnabled && $model->flag) {
                 if ($renamed) {
                     $post = Post::where('discussion_id', $discussion->id)->where('number', 1)->first();
                     if ($post !== null) {
@@ -127,5 +131,10 @@ class DecontaminationProcessor
         ];
 
         $this->bus->dispatch(new CreateFlag($reportingUser, $data));
+    }
+
+    private function getUser()
+    {
+        return User::findById(1);
     }
 }

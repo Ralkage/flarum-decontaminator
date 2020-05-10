@@ -17,17 +17,17 @@ export default class DecontaminatorListItem extends Component {
                     state: rule.data.attributes.flag,
                     onchange: this.updateFlag.bind(this)
                 })}</th>
-                <td className="Profanities-actions">
+                <td className="Decontaminator-actions">
 
                     <div className="ButtonGroup">
                         {Button.component({
-                            className: 'Button Button--Profanities-edit',
+                            className: 'Button Button--Decontaminator-edit',
                             icon: 'fas fa-pencil-alt',
                             onclick: () => app.modal.show(new EditDecontaminatorRuleModal({ rule })),
                         })}
 
                         {Button.component({
-                            className: 'Button Button--danger Button--Profanities-delete',
+                            className: 'Button Button--danger Button--Decontaminator-delete',
                             icon: 'fas fa-times',
                             onclick: this.delete.bind(this),
                         })}

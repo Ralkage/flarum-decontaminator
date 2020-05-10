@@ -1,5 +1,5 @@
 {
-  "name": "@flarumite/profanity",
+  "name": "@flarumite/decontaminator",
   "version": "0.0.0",
   "dependencies": {
     "flarum-webpack-config": "0.1.0-beta.10",
