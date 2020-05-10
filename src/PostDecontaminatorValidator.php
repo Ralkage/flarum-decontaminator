@@ -21,7 +21,7 @@ class PostDecontaminatorValidator extends AbstractValidator
     protected $rules = [
         'name' => [
             'required',
-            'unique:profanities',
+            'unique:decontaminator',
             'max:200',
         ],
         'regex' => [

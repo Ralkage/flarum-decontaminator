@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Builder;
 class PostDecontaminatorRepository
 {
     /**
-     * Get a new query builder for the profanity table.
+     * Get a new query builder for the filter table.
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */

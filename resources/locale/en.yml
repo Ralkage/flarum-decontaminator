@@ -26,7 +26,6 @@ flarumite-decontaminator:
 
     list:
       empty_text: It looks like there are no rules here.
-      title: List of regex to ban profanities
 
     permissions:
       bypass-filter: Bypass rules defined in the decontaminator

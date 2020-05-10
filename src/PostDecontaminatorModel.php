@@ -27,7 +27,7 @@ class PostDecontaminatorModel extends AbstractModel
     protected $dates = ['time', 'edit_time'];
 
     /**
-     * Create a new Profanity Regex.
+     * Create a new filter Regex.
      *
      * @return static
      */
