@@ -6,7 +6,6 @@ use Flarum\Api\Event\Serializing;
 use Flarum\Api\Serializer\PostSerializer;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
 use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
-use Illuminate\Contracts\Events\Dispatcher;
 
 class LoadPost
 {
@@ -19,17 +18,9 @@ class LoadPost
     }
 
     /**
-     * @param Dispatcher $events
-     */
-    public function subscribe(Dispatcher $events): void
-    {
-        $events->listen(Serializing::class, [$this, 'whenPostIsLoading']);
-    }
-
-    /**
      * @param  Serializing $event
      */
-    public function whenPostIsLoading(Serializing $event): void
+    public function handle(Serializing $event): void
     {
         if ($event->isSerializer(PostSerializer::class)) {
 

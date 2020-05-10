@@ -2,12 +2,12 @@
 
 namespace Flarumite\PostDecontaminator\Listeners;
 
-use Flarum\Post\Event\Saving;
+use Flarum\Discussion\Event\Renamed;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
 use Flarumite\PostDecontaminator\PostDecontaminatorRepository;
 use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 
-class SavePost
+class RenameDiscussion
 {
 
     private $decontaminationProcessor;
@@ -19,22 +19,16 @@ class SavePost
         $this->repository = $repository;
     }
 
-    /**
-     * @param Saving $event
-     */
-    public function handle(Saving $event): void
+    public function handle(Renamed $event):void
     {
-        // if ($this->repository->isStaff($event->actor->id) || $this->repository->isStaff($event->post->user_id)) {
+        // if ($this->repository->isStaff($event->actor->id) || $this->repository->isStaff($event->discussion->user_id)) {
         //     return;
         // }
         
-        if (!isset($event->data["attributes"]["reaction"])) { // Add support for reactions, don't process the Saving event as we've already handled it
-            PostDecontaminatorModel::query()
+        PostDecontaminatorModel::query()
             ->where('event', 'save')
             ->each(function (PostDecontaminatorModel $model) use ($event) {
-                $this->decontaminationProcessor->process($model, $event->post);
+                $this->decontaminationProcessor->processDiscussion($model, $event->discussion, true);
             });
-        }
     }
-
 }
