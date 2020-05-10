@@ -17,8 +17,6 @@ use Flarum\Discussion\Event\Started;
 use Flarum\Extend;
 use Flarum\Post\Event\Saving;
 use Flarumite\PostDecontaminator\Api\Controller;
-use Flarumite\PostDecontaminator\Listeners\RenameDiscussion;
-use Flarumite\PostDecontaminator\Listeners\SaveDiscussion;
 
 return [
     new Extend\Locales(__DIR__.'/resources/locale'),
