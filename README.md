@@ -1,4 +1,4 @@
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/flarumite/flarum-decontaminator/blob/master/LICENSE.md) [![Latest Stable Version](https://img.shields.io/packagist/v/flarumite/flarum-decontaminator.svg)](https://packagist.org/packages/flarumite/flarum-decontaminator) [![Total Downloads](https://img.shields.io/packagist/dt/flarumite/flarum-decontaminator.svg)](https://packagist.org/packages/flarumite/flarum-decontaminator)
+[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/flarumite/flarum-decontaminator/blob/master/LICENSE.md) [![Latest Stable Version](https://img.shields.io/packagist/v/flarumite/flarum-decontaminator.svg)](https://packagist.org/packages/flarumite/flarum-decontaminator) [![Total Downloads](https://img.shields.io/packagist/dt/flarumite/flarum-decontaminator.svg)](https://packagist.org/packages/flarumite/flarum-decontaminator) ![Tests](https://github.com/flarumite/flarum-decontaminator/workflows/Tests/badge.svg)
 
 # Decontaminator by Flarumite
 
