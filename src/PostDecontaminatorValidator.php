@@ -20,7 +20,7 @@ class PostDecontaminatorValidator extends AbstractValidator
             'max:65535',
         ],
         'event' => [
-            'required'
+            'required',
         ],
     ];
 }

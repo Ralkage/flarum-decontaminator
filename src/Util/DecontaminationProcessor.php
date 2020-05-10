@@ -2,13 +2,13 @@
 
 namespace Flarumite\PostDecontaminator\Util;
 
-use Flarum\Post\Post;
 use Flarum\Discussion\Discussion;
-use Flarumite\PostDecontaminator\PostDecontaminatorModel;
-use Symfony\Component\Translation\TranslatorInterface;
 use Flarum\Flags\Command\CreateFlag;
-use Illuminate\Contracts\Bus\Dispatcher;
+use Flarum\Post\Post;
 use Flarum\User\User;
+use Flarumite\PostDecontaminator\PostDecontaminatorModel;
+use Illuminate\Contracts\Bus\Dispatcher;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class DecontaminationProcessor
 {
@@ -62,7 +62,6 @@ class DecontaminationProcessor
                     if ($post !== null) {
                         $this->raiseFlag($post, $model);
                     }
-
                 } else {
                     $discussion->afterSave(function ($discussion) use ($model) {
                         $post = Post::where('discussion_id', $discussion->id)->where('number', 1)->first();
@@ -86,36 +85,36 @@ class DecontaminationProcessor
 
     public function raiseFlag(Post $post, PostDecontaminatorModel $model, $matches = ''): void
     {
-        if($post->discussion->is_private){
+        if ($post->discussion->is_private) {
             $reportingUser = User::where('id', $post->user_id)->first();
         } else {
             $reportingUser = User::where('id', '1')->first();
         }
 
         if ($matches !== '') {
-            $matches = ' [' . $matches . ']';
+            $matches = ' ['.$matches.']';
         }
-        
+
         $data = [
-            "type" => "flags",
-            "attributes" => [
-                "reason" => null,
-                "reasonDetail" => $model->name . $matches
+            'type'       => 'flags',
+            'attributes' => [
+                'reason'       => null,
+                'reasonDetail' => $model->name.$matches,
             ],
-            "relationships" => [
-                "user" => [
-                    "data" => [
-                        "type" => "users",
-                        "id" => $reportingUser->id
-                    ]
+            'relationships' => [
+                'user' => [
+                    'data' => [
+                        'type' => 'users',
+                        'id'   => $reportingUser->id,
+                    ],
                 ],
-                "post" => [
-                    "data" => [
-                        "type" => "posts",
-                        "id" => $post->id
-                    ]
-                ]
-            ]
+                'post' => [
+                    'data' => [
+                        'type' => 'posts',
+                        'id'   => $post->id,
+                    ],
+                ],
+            ],
         ];
 
         $this->bus->dispatch(new CreateFlag($reportingUser, $data));

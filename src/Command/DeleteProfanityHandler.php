@@ -41,7 +41,6 @@ class DeleteProfanityHandler
         $page = $this->repository->findOrFail($command->pageId, $actor);
 
         $this->assertAdmin($actor);
-        
 
         $page->delete();
 

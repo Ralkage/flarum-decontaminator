@@ -12,7 +12,7 @@ class PostDecontaminatorModel extends AbstractModel
     protected $table = 'profanities';
 
     protected $casts = [
-        'id'        => 'integer'
+        'id'        => 'integer',
     ];
 
     protected $dates = ['time', 'edit_time'];

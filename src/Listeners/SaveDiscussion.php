@@ -9,7 +9,6 @@ use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 
 class SaveDiscussion
 {
-
     private $decontaminationProcessor;
     private $repository;
 
@@ -27,7 +26,7 @@ class SaveDiscussion
         // if ($this->repository->isStaff($event->actor->id) || $this->repository->isStaff($event->discussion->user_id)) {
         //     return;
         // }
-        
+
         PostDecontaminatorModel::query()
             ->where('event', 'save')
             ->each(function (PostDecontaminatorModel $model) use ($event) {

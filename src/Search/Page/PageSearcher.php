@@ -23,7 +23,7 @@ class PageSearcher
     protected $pages;
 
     /**
-     * @param GambitManager  $gambits
+     * @param GambitManager                $gambits
      * @param PostDecontaminatorRepository $pages
      */
     public function __construct(GambitManager $gambits, PostDecontaminatorRepository $pages)

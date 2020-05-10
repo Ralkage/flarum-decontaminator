@@ -12,12 +12,10 @@ class CreateProfanityHandler
 
     protected $validator;
 
-
     public function __construct(PostDecontaminatorValidator $validator)
     {
         $this->validator = $validator;
     }
-
 
     public function handle(CreateProfanity $command)
     {
@@ -32,7 +30,6 @@ class CreateProfanityHandler
             array_get($data, 'attributes.replacement'),
             array_get($data, 'attributes.flag'),
             array_get($data, 'attributes.event')
-
         );
 
         $this->validator->assertValid($page->getAttributes());
