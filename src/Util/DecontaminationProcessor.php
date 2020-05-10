@@ -117,25 +117,25 @@ class DecontaminationProcessor
     public function buildDataArray($name, $userId, $postId)
     {
         return [
-            "type" => "flags",
-            "attributes" => [
-                "reason" => null,
-                "reasonDetail" => $name
+            'type'       => 'flags',
+            'attributes' => [
+                'reason'       => null,
+                'reasonDetail' => $name,
             ],
-            "relationships" => [
-                "user" => [
-                    "data" => [
-                        "type" => "users",
-                        "id" => $userId
-                    ]
+            'relationships' => [
+                'user' => [
+                    'data' => [
+                        'type' => 'users',
+                        'id'   => $userId,
+                    ],
                 ],
-                "post" => [
-                    "data" => [
-                        "type" => "posts",
-                        "id" => $postId
-                    ]
-                ]
-            ]
+                'post' => [
+                    'data' => [
+                        'type' => 'posts',
+                        'id'   => $postId,
+                    ],
+                ],
+            ],
         ];
     }
 }

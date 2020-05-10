@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of flarumite/flarum-decontaminator.
+ *
+ * Copyright (c) 2020 Flarumite.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Flarumite\Tests\Decontaminator\Serializer;
 
 use Flarumite\Tests\Decontaminator\AbstractHandlerTest;
@@ -11,7 +20,8 @@ use GuzzleHttp\Psr7\ServerRequest;
 
 class PostDecontaminatorSerializerTest extends AbstractHandlerTest
 {
-    use UserTestTrait, ProfanityTestTrait;
+    use UserTestTrait;
+    use ProfanityTestTrait;
 
     public $attributesArray;
     public $now;
@@ -21,14 +31,14 @@ class PostDecontaminatorSerializerTest extends AbstractHandlerTest
         parent::setUp();
         $this->now = date('Y-m-dH:i:s');
         $this->attributesArray = [
-            'id' => 1,
-            'name' => 'Rule',
-            'regex' => '/strawberry/mi',
+            'id'          => 1,
+            'name'        => 'Rule',
+            'regex'       => '/strawberry/mi',
             'replacement' => 'raspberry',
-            'flag' => true,
-            'event' => false,
-            'time' => $this->now,
-            'edit_time' => $this->now
+            'flag'        => true,
+            'event'       => false,
+            'time'        => $this->now,
+            'edit_time'   => $this->now,
         ];
     }
 
@@ -103,6 +113,7 @@ class PostDecontaminatorSerializerTest extends AbstractHandlerTest
         foreach ($this->attributesArray as $key => $value) {
             $response->$key = $value;
         }
+
         return $response;
     }
 }

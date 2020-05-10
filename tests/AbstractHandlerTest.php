@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of flarumite/flarum-decontaminator.
+ *
+ * Copyright (c) 2020 Flarumite.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Flarumite\Tests\Decontaminator;
 
 use Flarum\User\User;
@@ -27,7 +36,7 @@ abstract class AbstractHandlerTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->postDecontaminatorModel = \Mockery::mock('overload:' . \Flarumite\PostDecontaminator\PostDecontaminatorModel::class);
+        $this->postDecontaminatorModel = \Mockery::mock('overload:'.\Flarumite\PostDecontaminator\PostDecontaminatorModel::class);
     }
 
     /**

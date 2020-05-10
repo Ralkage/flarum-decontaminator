@@ -1,12 +1,21 @@
 <?php
 
+/*
+ * This file is part of flarumite/flarum-decontaminator.
+ *
+ * Copyright (c) 2020 Flarumite.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Flarumite\Tests\Decontaminator;
 
 use Flarum\Discussion\Discussion;
 use Flarum\Extension\ExtensionManager;
 use Flarum\Post\Post;
-use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
+use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 use Flarumite\Tests\Decontaminator\Stubs\MockDiscussion;
 use Flarumite\Tests\Decontaminator\Stubs\MockPost;
 use Flarumite\Tests\Decontaminator\Stubs\MockPostDecontaminatorModel;
@@ -35,19 +44,19 @@ class DecontaminationProcessorTest extends AbstractHandlerTest
         $this->model = new MockPostDecontaminatorModel();
 
         $this->attributesArray = [
-            'name' => 'Rule',
-            'regex' => '/strawberry/mi',
+            'name'        => 'Rule',
+            'regex'       => '/strawberry/mi',
             'replacement' => 'raspberry',
-            'flag' => false,
-            'event' => false,
+            'flag'        => false,
+            'event'       => false,
         ];
 
         $this->attributesArray2 = [
-            'name' => 'Swear',
-            'regex' => '/orange/mi',
+            'name'        => 'Swear',
+            'regex'       => '/orange/mi',
             'replacement' => '',
-            'flag' => false,
-            'event' => false,
+            'flag'        => false,
+            'event'       => false,
         ];
     }
 
@@ -194,9 +203,9 @@ class DecontaminationProcessorTest extends AbstractHandlerTest
             ->andReturn($this->getAttributes($this->attributesArray));
         $model = $this->postDecontaminatorModel->build();
         $expected = [
-            "type" => "flags",
-            "attributes" => ["reason" => null, "reasonDetail" => "Rule"],
-            "relationships" => ["user" => ["data" => ["type" => "users", "id" => 1]], "post" => ["data" => ["type" => "posts", "id" => 1]]]
+            'type'          => 'flags',
+            'attributes'    => ['reason' => null, 'reasonDetail' => 'Rule'],
+            'relationships' => ['user' => ['data' => ['type' => 'users', 'id' => 1]], 'post' => ['data' => ['type' => 'posts', 'id' => 1]]],
         ];
 
         $actual = $this->decontaminationProcessor->buildDataArray(
@@ -213,7 +222,7 @@ class DecontaminationProcessorTest extends AbstractHandlerTest
         foreach ($attributesArray as $key => $value) {
             $response->$key = $value;
         }
+
         return $response;
     }
-
 }

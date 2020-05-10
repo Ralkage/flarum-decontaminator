@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of flarumite/flarum-decontaminator.
+ *
+ * Copyright (c) 2020 Flarumite.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Flarumite\Tests\Decontaminator\Traits;
 
 use Flarumite\PostDecontaminator\Command\CreateProfanity;
@@ -13,7 +22,7 @@ trait ProfanityTestTrait
         $command = $this->getMockBuilder(CreateProfanity::class)
             ->enableOriginalConstructor()
             ->setConstructorArgs([$actor, $data = [
-                'attributes' => $this->attributesArray
+                'attributes' => $this->attributesArray,
             ]])
             ->getMock();
 
@@ -25,7 +34,7 @@ trait ProfanityTestTrait
         $validator->method('assertValid')
             ->willReturn('true');
 
-        $postDecontaminatorModel = \Mockery::mock('overload:' . \Flarumite\PostDecontaminator\PostDecontaminatorModel::class);
+        $postDecontaminatorModel = \Mockery::mock('overload:'.\Flarumite\PostDecontaminator\PostDecontaminatorModel::class);
         $postDecontaminatorModel->shouldReceive('build')
             ->andReturn($this->getAttributes());
         $commandHandler = $this->getMockBuilder(CreateProfanityHandler::class)
