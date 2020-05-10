@@ -20,6 +20,12 @@
       "Flarumite\\PostDecontaminator\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Flarumite\\Tests\\Decontaminator\\": "tests/",
+      "Flarumite\\Tests\\Decontaminator\\Stubs\\": "tests/Stubs/"
+    }
+  },
   "extra": {
     "flarum-extension": {
       "title": "Flarumite Post Decontaminator",
@@ -29,5 +35,9 @@
         "color": "#fff"
       }
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5",
+    "mockery/mockery": "^1.3"
   }
 }

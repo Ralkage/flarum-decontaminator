@@ -33,7 +33,7 @@ Install with composer:
 composer require flarumite/flarum-decontaminator
 ```
 
-**Creating a regex rule _may_ have undesired effects. Please be certain you know what your rule is doing**
+## **Creating a regex rule _may_ have undesired effects. Please be certain you know what your rule is doing**
 
 ### Links
 

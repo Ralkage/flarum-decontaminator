@@ -1,0 +1,29 @@
+<phpunit
+  bootstrap                   = "vendor/autoload.php"
+  colors                      = "true"
+  convertErrorsToExceptions   = "true"
+  convertNoticesToExceptions  = "true"
+  convertWarningsToExceptions = "true"
+  processIsolation            = "false"
+  stopOnFailure               = "false"
+  verbose                     = "true">
+  <logging>
+    <log type="coverage-html" target="tests/coverage"/>
+  </logging>
+  <filter>
+        <whitelist>
+            <directory suffix=".php">src</directory>
+            <exclude>
+              <directory>*/Listeners</directory>
+              <directory>*/Search</directory>
+              <directory>*/Api/Controller</directory>
+              <file>src/PostDecontaminatorRepository.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+  <testsuites>
+    <testsuite name="Unit">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

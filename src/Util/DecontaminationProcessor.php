@@ -105,28 +105,37 @@ class DecontaminationProcessor
             $matches = ' ['.$matches.']';
         }
 
-        $data = [
-            'type'       => 'flags',
-            'attributes' => [
-                'reason'       => null,
-                'reasonDetail' => $model->name.$matches,
-            ],
-            'relationships' => [
-                'user' => [
-                    'data' => [
-                        'type' => 'users',
-                        'id'   => $actor->id,
-                    ],
-                ],
-                'post' => [
-                    'data' => [
-                        'type' => 'posts',
-                        'id'   => $post->id,
-                    ],
-                ],
-            ],
-        ];
+        $data = $this->buildDataArray(
+            $model->name,
+            $actor->id,
+            $post->id
+        );
 
         $this->bus->dispatch(new CreateFlag($actor, $data));
+    }
+
+    public function buildDataArray($name, $userId, $postId)
+    {
+        return [
+            "type" => "flags",
+            "attributes" => [
+                "reason" => null,
+                "reasonDetail" => $name
+            ],
+            "relationships" => [
+                "user" => [
+                    "data" => [
+                        "type" => "users",
+                        "id" => $userId
+                    ]
+                ],
+                "post" => [
+                    "data" => [
+                        "type" => "posts",
+                        "id" => $postId
+                    ]
+                ]
+            ]
+        ];
     }
 }
