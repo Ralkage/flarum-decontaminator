@@ -3,6 +3,7 @@
 namespace Flarumite\PostDecontaminator\Api\Controller;
 
 use Flarum\Api\Controller\AbstractShowController;
+use Flarumite\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer;
 use Flarumite\PostDecontaminator\Command\EditProfanity;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
@@ -13,7 +14,7 @@ class UpdatePostDecontaminatorController extends AbstractShowController
     /**
      * {@inheritdoc}
      */
-    public $serializer = 'imorland\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer';
+    public $serializer = PostDecontaminatorSerializer::class;
 
     /**
      * @var Dispatcher
