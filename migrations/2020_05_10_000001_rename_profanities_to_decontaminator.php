@@ -21,6 +21,5 @@ return [
     },
     'down' => function (Builder $schema) {
         $schema->rename('decontaminator', 'profanities');
-        
     },
 ];
