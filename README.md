@@ -15,3 +15,7 @@ composer require flarumite/flarum-decontaminator
 ```sh
 composer update flarumite/flarum-decontaminator
 ```
+### Links
+
+- [Packagist](https://packagist.org/packages/flarumite/flarum-decontaminator)
+- [GitHub](https://github.com/flarumite/flarum-decontaminator)
