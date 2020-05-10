@@ -6,15 +6,15 @@ use Flarum\Api\Controller\AbstractListController;
 use Flarum\Http\UrlGenerator;
 use Flarum\Search\SearchCriteria;
 use Flarum\User\AssertPermissionTrait;
-use Flarumite\PostDecontaminator\Search\Page\PageSearcher;
 use Flarumite\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer;
+use Flarumite\PostDecontaminator\Search\Page\PageSearcher;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
 
 class ListPostDecontaminatorController extends AbstractListController
 {
     use AssertPermissionTrait;
-    
+
     /**
      * {@inheritdoc}
      */

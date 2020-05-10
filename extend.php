@@ -21,11 +21,11 @@ use Flarumite\PostDecontaminator\Listeners\RenameDiscussion;
 use Flarumite\PostDecontaminator\Listeners\SaveDiscussion;
 
 return [
-    new Extend\Locales(__DIR__ . '/resources/locale'),
+    new Extend\Locales(__DIR__.'/resources/locale'),
 
     (new Extend\Frontend('admin'))
-        ->css(__DIR__ . '/resources/less/admin.less')
-        ->js(__DIR__ . '/js/dist/admin.js'),
+        ->css(__DIR__.'/resources/less/admin.less')
+        ->js(__DIR__.'/js/dist/admin.js'),
 
     (new Extend\Routes('api'))
         ->get('/profanities', 'profanities.index', Controller\ListPostDecontaminatorController::class)

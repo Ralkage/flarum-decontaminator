@@ -12,7 +12,7 @@ use Tobscure\JsonApi\Document;
 class ShowPostDecontaminatorController extends AbstractShowController
 {
     use AssertPermissionTrait;
-    
+
     /**
      * {@inheritdoc}
      */
@@ -38,7 +38,7 @@ class ShowPostDecontaminatorController extends AbstractShowController
     {
         $actor = $request->getAttribute('actor');
         $this->assertAdmin($actor);
-        
+
         $id = array_get($request->getQueryParams(), 'id');
 
         return $this->pages->findOrFail($id, $actor);

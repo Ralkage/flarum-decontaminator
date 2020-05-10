@@ -9,7 +9,6 @@ use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 
 class SavePost
 {
-
     private $decontaminationProcessor;
     private $repository;
 
@@ -27,8 +26,8 @@ class SavePost
         // if ($this->repository->isStaff($event->actor->id) || $this->repository->isStaff($event->post->user_id)) {
         //     return;
         // }
-        
-        if (!isset($event->data["attributes"]["reaction"])) { // Add support for reactions, don't process the Saving event as we've already handled it
+
+        if (!isset($event->data['attributes']['reaction'])) { // Add support for reactions, don't process the Saving event as we've already handled it
             PostDecontaminatorModel::query()
             ->where('event', 'save')
             ->each(function (PostDecontaminatorModel $model) use ($event) {
@@ -36,5 +35,4 @@ class SavePost
             });
         }
     }
-
 }

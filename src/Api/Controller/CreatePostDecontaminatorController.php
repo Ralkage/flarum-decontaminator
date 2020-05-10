@@ -3,8 +3,8 @@
 namespace Flarumite\PostDecontaminator\Api\Controller;
 
 use Flarum\Api\Controller\AbstractCreateController;
-use Flarumite\PostDecontaminator\Command\CreateProfanity;
 use Flarumite\PostDecontaminator\Api\Serializer\PostDecontaminatorSerializer;
+use Flarumite\PostDecontaminator\Command\CreateProfanity;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;

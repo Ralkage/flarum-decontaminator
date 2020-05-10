@@ -11,17 +11,14 @@ class EditProfanityHandler
 {
     use AssertPermissionTrait;
 
-
     protected $pages;
     protected $validator;
-
 
     public function __construct(PostDecontaminatorRepository $pages, PostDecontaminatorValidator $validator)
     {
         $this->pages = $pages;
         $this->validator = $validator;
     }
-
 
     public function handle(EditProfanity $command)
     {

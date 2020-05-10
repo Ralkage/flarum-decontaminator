@@ -9,7 +9,6 @@ use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 
 class LoadPost
 {
-
     private $decontaminationProcessor;
 
     public function __construct(DecontaminationProcessor $decontaminationProcessor)
@@ -18,12 +17,11 @@ class LoadPost
     }
 
     /**
-     * @param  Serializing $event
+     * @param Serializing $event
      */
     public function handle(Serializing $event): void
     {
         if ($event->isSerializer(PostSerializer::class)) {
-
             PostDecontaminatorModel::query()
                 ->where('event', 'load')
                 ->each(function (PostDecontaminatorModel $model) use ($event) {

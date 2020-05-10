@@ -9,7 +9,6 @@ use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 
 class RenameDiscussion
 {
-
     private $decontaminationProcessor;
     private $repository;
 
@@ -19,12 +18,12 @@ class RenameDiscussion
         $this->repository = $repository;
     }
 
-    public function handle(Renamed $event):void
+    public function handle(Renamed $event): void
     {
         // if ($this->repository->isStaff($event->actor->id) || $this->repository->isStaff($event->discussion->user_id)) {
         //     return;
         // }
-        
+
         PostDecontaminatorModel::query()
             ->where('event', 'save')
             ->each(function (PostDecontaminatorModel $model) use ($event) {

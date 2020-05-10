@@ -39,11 +39,11 @@ class PostDecontaminatorRepository
         return $query;
     }
 
-    public function isStaff($user_id):bool
+    public function isStaff($user_id): bool
     {
-        return (bool)User::where('id', $user_id)
+        return (bool) User::where('id', $user_id)
             ->leftJoin('group_user', 'users.id', '=', 'group_user.user_id')
-            ->whereIn('group_id', [1,4]) // TODO expose these group IDs via extension settings modal
+            ->whereIn('group_id', [1, 4]) // TODO expose these group IDs via extension settings modal
             ->count();
     }
 }
