@@ -1,4 +1,6 @@
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/flarumite/flarum-decontaminator/blob/master/LICENSE.md) [![Latest Stable Version](https://img.shields.io/packagist/v/flarumite/flarum-decontaminator.svg)](https://packagist.org/packages/flarumite/flarum-decontaminator) [![Total Downloads](https://img.shields.io/packagist/dt/flarumite/flarum-decontaminator.svg)](https://packagist.org/packages/flarumite/flarum-decontaminator) ![Tests](https://github.com/flarumite/flarum-decontaminator/workflows/Tests/badge.svg)
+[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/flarumite/flarum-decontaminator/blob/master/LICENSE.md) [![Latest Stable Version](https://img.shields.io/packagist/v/flarumite/flarum-decontaminator.svg)](https://packagist.org/packages/flarumite/flarum-decontaminator) [![Total Downloads](https://img.shields.io/packagist/dt/flarumite/flarum-decontaminator.svg)](https://packagist.org/packages/flarumite/flarum-decontaminator) ![Tests](https://github.com/flarumite/flarum-decontaminator/workflows/Tests/badge.svg) [![Donate](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QCCXU72DC9LB4&source=url)
+
+
 
 # Decontaminator by Flarumite
 
@@ -37,5 +39,6 @@ composer require flarumite/flarum-decontaminator
 
 ### Links
 
+- [![Donate](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QCCXU72DC9LB4&source=url)
 - [Packagist](https://packagist.org/packages/flarumite/flarum-decontaminator)
 - [GitHub](https://github.com/flarumite/flarum-decontaminator)
