@@ -42,3 +42,4 @@ composer require flarumite/flarum-decontaminator
 - [![Donate](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QCCXU72DC9LB4&source=url)
 - [Packagist](https://packagist.org/packages/flarumite/flarum-decontaminator)
 - [GitHub](https://github.com/flarumite/flarum-decontaminator)
+- [Discuss](https://discuss.flarum.org/d/23735)
