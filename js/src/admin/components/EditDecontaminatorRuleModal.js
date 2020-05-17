@@ -148,7 +148,7 @@ export default class EditDecontaminatorRuleModal extends Modal {
   delete() {
     if (
       confirm(
-        app.translator.trans('giffgaff-decontaminator.admin.edit_rule.delete_confirmation')
+        app.translator.trans('flarumite-decontaminator.admin.edit_rule.delete_confirmation')
       )) {
       this.rule.delete().then(() => m.redraw());
       this.hide();

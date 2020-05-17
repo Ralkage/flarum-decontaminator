@@ -41,7 +41,7 @@ class DeleteProfanityHandler
     /**
      * @param DeleteProfanity $command
      *
-     * @return \giffgaff\PostDecontaminator\PostDecontaminatorModel
+     * @return \Flarumite\PostDecontaminator\PostDecontaminatorModel
      */
     public function handle(DeleteProfanity $command)
     {
