@@ -14,6 +14,7 @@ namespace Flarumite\PostDecontaminator\Util;
 use Flarum\Discussion\Discussion;
 use Flarum\Extension\ExtensionManager;
 use Flarum\Flags\Command\CreateFlag;
+use Flarum\Group\Group;
 use Flarum\Post\Post;
 use Flarum\User\User;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
@@ -98,7 +99,7 @@ class DecontaminationProcessor
         $actor = User::find($post->user_id);
 
         if ($actor->cannot('flag', $post)) {
-            $actor = User::find(1);
+            $actor = $this->findAdminUser();
         }
 
         if ($matches !== '') {
@@ -137,5 +138,12 @@ class DecontaminationProcessor
                 ],
             ],
         ];
+    }
+
+    private function findAdminUser(): ?User
+    {
+        return User::leftJoin('group_user', 'group_user.group_id', 'users.id')
+            ->where('group_user.group_id', Group::ADMINISTRATOR_ID)
+            ->first();
     }
 }
