@@ -11,5 +11,4 @@ export default class DecontaminatorRule extends mixin(Model, {
     event: Model.attribute('event'),
     time: Model.attribute('time', Model.transformDate),
     editTime: Model.attribute('editTime', Model.transformDate),
-
 }) {}

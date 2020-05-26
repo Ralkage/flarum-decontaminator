@@ -4,7 +4,7 @@ import DecontaminatorRow from '../common/models/Decontaminator';
 import addDecontaminatorPane from './addDecontaminatorPane';
 import PermissionGrid from 'flarum/components/PermissionGrid';
 
-app.initializers.add('flarumite/decontaminator', app => {
+app.initializers.add('flarumite/decontaminator', (app) => {
     app.store.models.decontaminator = DecontaminatorRow;
 
     extend(PermissionGrid.prototype, 'moderateItems', (items) => {
