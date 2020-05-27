@@ -16,6 +16,7 @@ use Flarum\Extension\ExtensionManager;
 use Flarum\Flags\Command\CreateFlag;
 use Flarum\Group\Group;
 use Flarum\Post\Post;
+use Flarum\Settings\SettingsRepositoryInterface;
 use Flarum\User\User;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
 use Illuminate\Contracts\Bus\Dispatcher;
@@ -25,15 +26,21 @@ class DecontaminationProcessor
     private $matchedWord = null;
 
     /**
+     * @var SettingsRepositoryInterface
+     */
+    protected $settings;
+
+    /**
      * @var Dispatcher
      */
     protected $bus;
 
     protected $flagsEnabled = false;
 
-    public function __construct(ExtensionManager $extension, Dispatcher $bus)
+    public function __construct(ExtensionManager $extension, Dispatcher $bus, SettingsRepositoryInterface $settings)
     {
         $this->bus = $bus;
+        $this->settings = $settings;
 
         if ($extension->isEnabled('flarum-flags') && class_exists(CreateFlag::class)) {
             $this->flagsEnabled = true;
@@ -98,7 +105,7 @@ class DecontaminationProcessor
     {
         $actor = User::find($post->user_id);
 
-        if ($actor->cannot('flag', $post)) {
+        if (!(bool) $this->settings->get('flarum-flags.can_flag_own')) {
             $actor = $this->findAdminUser();
         }
 
