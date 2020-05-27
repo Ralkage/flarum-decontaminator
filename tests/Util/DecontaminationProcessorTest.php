@@ -14,6 +14,7 @@ namespace Flarumite\Tests\Decontaminator;
 use Flarum\Discussion\Discussion;
 use Flarum\Extension\ExtensionManager;
 use Flarum\Post\Post;
+use Flarum\Settings\SettingsRepositoryInterface;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
 use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
 use Flarumite\Tests\Decontaminator\Stubs\MockDiscussion;
@@ -40,7 +41,8 @@ class DecontaminationProcessorTest extends AbstractHandlerTest
         parent::setUp();
         $extensionManager = $this->createMock(ExtensionManager::class);
         $dispatcher = $this->createMock(Dispatcher::class);
-        $this->decontaminationProcessor = new DecontaminationProcessor($extensionManager, $dispatcher);
+        $settings = $this->createMock(SettingsRepositoryInterface::class);
+        $this->decontaminationProcessor = new DecontaminationProcessor($extensionManager, $dispatcher, $settings);
         $this->model = new MockPostDecontaminatorModel();
 
         $this->attributesArray = [
