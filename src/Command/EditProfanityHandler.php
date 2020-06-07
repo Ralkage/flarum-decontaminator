@@ -36,7 +36,7 @@ class EditProfanityHandler
 
         $data = $command->data;
 
-        $page = $this->pages->findOrFail($command->pageId, $actor);   
+        $page = $this->pages->findOrFail($command->pageId, $actor);
 
         $attributes = array_get($data, 'attributes', []);
 
