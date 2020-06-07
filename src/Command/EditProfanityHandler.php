@@ -32,11 +32,11 @@ class EditProfanityHandler
     public function handle(EditProfanity $command)
     {
         $actor = $command->actor;
+        $this->assertAdmin($actor);
+
         $data = $command->data;
 
-        $page = $this->pages->findOrFail($command->pageId, $actor);
-
-        $this->assertAdmin($actor);
+        $page = $this->pages->findOrFail($command->pageId, $actor);   
 
         $attributes = array_get($data, 'attributes', []);
 
