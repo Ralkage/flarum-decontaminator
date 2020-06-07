@@ -14,6 +14,7 @@ namespace Flarumite\PostDecontaminator\Listeners;
 use Flarum\Post\Event\Saving;
 use Flarumite\PostDecontaminator\PostDecontaminatorModel;
 use Flarumite\PostDecontaminator\Util\DecontaminationProcessor;
+use Illuminate\Support\Arr;
 
 class SavePost
 {
@@ -33,7 +34,7 @@ class SavePost
             return;
         }
 
-        if (!isset($event->data['attributes']['reaction'])) { // Add support for reactions, don't process the Saving event as we've already handled it
+        if (!Arr::exists($event->data, 'attributes.reaction')) { // Add support for reactions, don't process the Saving event as we've already handled it
             PostDecontaminatorModel::query()
             ->where('event', 'save')
             ->each(function (PostDecontaminatorModel $model) use ($event) {
